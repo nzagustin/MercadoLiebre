@@ -4,10 +4,10 @@ const path = require('path');
 const app = express();
 
 app.get('', (req,res) =>{
-    res.send("Ahora si entre");  // Permite enviar texto o codigo HTML
+    res.send("Ahora si entre");  // Enviar texto o codigo HTML
 });
 
-// esta funcion marca que en "/mercadoLiebre" vas a poder acceder al html que vos estas usando
+// acceso al html que vos estas usando
 app.get('/mercadoLiebre', (req, res) =>{  
     res.sendFile(path.resolve(__dirname, './views/home.html'));
 }); 
@@ -19,10 +19,10 @@ app.get('/register', (req, res) =>{
 });
 app.use(express.static(path.join(__dirname, './public')));  
 
-//el primer parametro del listen dice en que numero de "localhost:" va a estar
+//localhost va a estar en 
 app.listen(process.env.PORT || 3002, () => {
     console.log("Servidor corriendo");
 });
 
-//Escribir "npm start" para levantar el servidor
+
 
